@@ -7,11 +7,13 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var webserver = require('gulp-webserver');
+var fontAwesome = require('node-font-awesome');
+
 
 //Tareas a configurar que concatenará nuestros archivos js, convirtiéndolo en script.js el que guardará en una carpeta llamada dist, será el q finalmente linkearemos en nuestro html
 
 gulp.task('script', function () {
-    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js','assets/js/init.js','assets/js/masonry.js', 'assets/js/javascript.js','assets/js/main.js'])
+    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js', 'assets/js/init.js', 'assets/js/masonry.js', 'assets/js/javascript.js', 'assets/js/main.js'])
         .pipe(concat('scripts.js'))
         //carpeta dist
         .pipe(gulp.dest('dist/js'));
@@ -24,7 +26,12 @@ gulp.task('style', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(minifyCSS())
         .pipe(concat('style.min.css'))
-        .pipe(gulp.dest('dist/css/'));
+        .pipe(sass({
+            includePaths: [fontAwesome.scssPath]
+        }))
+        .pipe(gulp.dest('dist/css/'))
+        
+        
 });
 
 //3ra tarea: webserver la cual nos crea un servidor web de desarrollo que se ejecuta en el localhost puerto 8000
@@ -36,12 +43,16 @@ gulp.task('webserver', function () {
             livereload: true,
             directoryListing: false,
             open: true,
-            port:8001
+            port: 8001
         }));
 });
-
-//Indicar a gulp cuales son las tareas que deberá ejecutar al hacer correr el comando gulp en nuestro terminal
-gulp.task('watch', function() {
-  gulp.watch('assets/sass/*.scss',['style']);
+//fonts
+gulp.task('fonts', function () {
+    gulp.src(fontAwesome.fonts)
+        .pipe(gulp.dest('./app/fonts'));
 });
-gulp.task('default', ['script', 'style', 'webserver','watch']);
+//Indicar a gulp cuales son las tareas que deberá ejecutar al hacer correr el comando gulp en nuestro terminal
+gulp.task('watch', function () {
+    gulp.watch('assets/sass/*.scss', ['style']);
+});
+gulp.task('default', ['script', 'style', 'webserver', 'watch']);

@@ -1,5 +1,13 @@
-@mixin padding(){
-    padding-left: 3%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+@mixin photos1(){
+    width:220px;
+    height:300px;
+}
+
+@mixin photos2(){
+    width:220px;
+    height:420px;
+}
+@mixin photos3(){
+    width:220px;
+    height:620px;
 }

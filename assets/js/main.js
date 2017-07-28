@@ -1,21 +1,32 @@
 $(document).ready(function () {
     //Side nav bar
     $(".button-collapse").sideNav();
-    console.log("funciona");
+    $('.modal').modal();
     $('.container').masonry({
-        // options
         itemSelector: '.element',
     });
     jsonArray();
 });
 
-function jsonArray(){
-    arregloObjetos.search_results.forEach(function(el){
-    console.log(el.id);
-	/*document.write("<img src='" + el.listing.thumbnail_url + "'" + "><br>");
-	document.write("<b>" + el.listing.localized_city + " - " + el.listing.name + "</b><br>");
-	document.write("Baños : " + el.listing.bathrooms + "<br>");
-	document.write("Dormitorios : " + el.listing.bedrooms + "<br>");*/
-})
+
+
+
+function jsonArray() {
+    var html = "";
+    arregloObjetos.search_results.forEach(function (el) {
+        html += ` <div class="element">
+                            <img id="photo`+ el.id + `"`+`" src="dist/img/`+ el.image_url + `">
+                            <p class="title">`+ el.title +  `<i class="fa fa-pinterest" aria-hidden="true"></i></p>
+                            <p class="description">`+ el.description + `</p>
+                            <p class="hasthag"><i class="fa fa-meetup" aria-hidden="true"></i>` + el.username +  ` #  `+ el.hashtag + `</p>            
+                    </div>`;
+        $('.container').html(html);
+
+
+
+    })
 }
+
+
+
 
