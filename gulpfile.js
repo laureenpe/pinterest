@@ -11,7 +11,7 @@ var webserver = require('gulp-webserver');
 //Tareas a configurar que concatenará nuestros archivos js, convirtiéndolo en script.js el que guardará en una carpeta llamada dist, será el q finalmente linkearemos en nuestro html
 
 gulp.task('script', function () {
-    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js', 'assets/js*.js'])
+    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/materialize-css/dist/js/materialize.js','assets/js/init.js','assets/js/masonry.js', 'assets/js/main.js'])
         .pipe(concat('scripts.js'))
         //carpeta dist
         .pipe(gulp.dest('dist/js'));
