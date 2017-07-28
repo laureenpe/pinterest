@@ -7,7 +7,6 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var webserver = require('gulp-webserver');
-var livereload = require('gulp-livereload');
 
 //Tareas a configurar que concatenará nuestros archivos js, convirtiéndolo en script.js el que guardará en una carpeta llamada dist, será el q finalmente linkearemos en nuestro html
 
@@ -36,15 +35,13 @@ gulp.task('webserver', function () {
             fallback: 'index.html',
             livereload: true,
             directoryListing: false,
-            open: true
-        }))
-        .pipe(livereload());
+            open: true,
+            port:8001
+        }));
 });
 
 //Indicar a gulp cuales son las tareas que deberá ejecutar al hacer correr el comando gulp en nuestro terminal
-gulp.task('default', ['script', 'style', 'webserver']);
-    // content
 gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch('less/*.less', ['less']);
+  gulp.watch('assets/sass/*.scss',['style']);
 });
+gulp.task('default', ['script', 'style', 'webserver','watch']);
