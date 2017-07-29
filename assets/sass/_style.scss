@@ -1,64 +1,77 @@
-/*NAVBAR*/
-nav .nav-wrapper{
-    background-color: black !important;
-    color: black;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+	font-family: 'Roboto', sans-serif;
     background: white;
     text-transform: uppercase;
 }
-*{
-    margin: 0;
-    padding: 0;
-}
-.container{
-    width: 90%;
-    margin: 15px auto;
-    
-}
-.element{
-    width: 220px;
-    background: white;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    margin-top: 10%;
-    
-}
-.element{
-    p{
-    padding: 0px;
-    font-size: 10px;
-    color: black;
-    margin-bottom: -45px;
-    }
-    
-    .title {
-        font-weight: bold;
-        color: black;
-        font-size: 10px;
-    }
 
-}
-.element img{
-    width: 100%;
-    border-radius: 20px;}
-
-
-    img, #photo1, #photo4, #photo7, #photo10, #photo1, #photo16, #photo19, #photo22, #photo25 
-    {
-    @include photos1();
+#wrapper {
+	width: 90%;
+	max-width: 1100px;
+	min-width: 800px;
+	margin: 50px auto;
 }
 
-#photo2,#photo5,#photo8,#photo11,#photo14,#photo17,#photo20,#photo23,#photo26 img{
-    @include photos2();
+#columns {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 3;
+	-moz-column-gap: 10px;
+	-moz-column-fill: auto;
+	column-count: 3;
+	column-gap: 15px;
+	column-fill: auto;
 }
-#photo3,#photo6,#photo9,#photo12,#photo15,#photo18,#photo21,#photo24,#photo27 img{
-    @include photos3();
+
+.pin {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 0 2px 15px;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+	opacity: 1;
+	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
 }
 
+.pin img {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
 
+.pin p {
+	font: 12px/18px Arial, sans-serif;
+	color: #333;
+	margin: 0;
+}
 
-/*PICTURES*/
+@media (min-width: 960px) {
+	#columns {
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+	}
+}
+
+@media (min-width: 1100px) {
+	#columns {
+		-webkit-column-count: 5;
+		-moz-column-count: 5;
+		column-count: 5;
+	}
+}
+
+#columns:hover .pin:not(:hover) {
+	opacity: 0.4;
+}
