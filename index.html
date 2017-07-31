@@ -7,39 +7,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Material Icon  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+  <script src="https://use.fontawesome.com/fb4df1f3f2.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" type="" href="dist/css/style.min.css">
 </head>
 
 <body>
   <nav>
-    <div class="nav-wrapper">
-      <div class="container">
-        <a href="#" class="brand-logo">Pinterest</a>
-        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">aqui</a></li>
-          <li><a href="#">esta</a></li>
-          <li><a href="#">Pinterest</a></li>
-          <li><a href="#">para ti</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-menu">
-          <li><a href="#">AQUI</a></li>
-          <li><a href="#">ESTA</a></li>
-          <li><a href="#">esto</a></li>
-          <li><a href="#">por eso</a></li>
-        </ul>
+    <div class="row">
+      <div class="col s2 m2 l2 ">
+        <div class="row">
+          <div class="col s1">
+            <a><img src="dist/img/Pinterest-logo.png" class="logo"></a>
+          </div>
+          <div class="col s1">
+            <small class="start">Inicio</small>
+
+          </div>
+        </div>
+      </div>
+      <form class="col s4">
+        <div class="input-field ">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" placeholder="Search" class="validate">
+        </div>
+      </form>
+      <div class="col s2">
+        <div class="input-field">
+          <select>
+      <option value="" disabled selected>Todos los pines</option>
+      <option value="1">Pin 1</option>
+      <option value="2">Pin 2</option>
+    </select>
+        </div>
+
+      </div>
+
+      <div class="col s2">
+        <img class="circle" src="dist/img/1.jpg" height: "48px" width: "48px" alt="">
+        <small class="center-text center">Laura Peláez</small>
+      </div>
+      <div class="col s1">
+        <i class="material-icons">reorder</i>
+
+      </div>
+      <div class="col s1">
+        <i class="material-icons">message</i>
+
       </div>
     </div>
+    <!--End Navbar-->
   </nav>
-  <!--Photos-->
+  <!--text slider-->
+  <section class="slider">
+    <div class="drees">
+     <h6> Drees</h6>
+    </div>
+    <div class="allende">
+     <h6> San Miguel de Allende</h6>
+    </div>
+    <div class="friki">
+     <h6> Friki</h6>
+    </div>
+    <div class="invitaciones">
+     <h6> Invitaciones</h6>
+    </div>
+    <div class="fotography">
+     <h6> Fotography</h6>
+    </div>
+    <div class="photocall">
+     <h6> PhotoCall</h6>
+    </div>
+    <div class="damas">
+     <h6> Damas</h6>
+    </div>
+    <div class="illumination">
+     <h6> Illumination</h6>
+    </div>
+    <div class="ramo">
+     <h6> Ramo</h6>
+    </div>
+    <div class="souvenires">
+     <h6> Souvenires</h6>
+    </div>
+    <div class="invitation">
+     <h6> Invitación</h6>
+    </div>
+    <div class="drees">
+     <h6> Drees</h6>
+    </div>
+    <div class="allende">
+     <h6> San Miguel de Allende</h6>
+    </div>
+    <div class="friki">
+     <h6> Friki</h6>
+    </div>
+    <div class="invitaciones">
+     <h6> Invitaciones</h6>
+    </div>
+    <div class="fotography">
+     <h6> Fotography</h6>
+    </div>
+    <div class="indicator">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
 
-  <div id="wrapper">
-    <div id="columns">
+    </div>
+    
+
+  </section>
+  <!--Photos-->
+  <section class="photos">
+    <div id="wrapper">
+      <div id="columns">
+        <!--Here goes the photos created with JS-->
+      </div>
+
+    </div>
+  </section>
+  <!--End photos-->
+
+  <!--MODAL-->
+  <section>
+  
+    <!-- Modal Structure -->
+    
+    <div id="modal" class="modal">
+      <!--Here goes the moda created with JS-->
     </div>
 
-  </div>
+  </section>
+  <!--End Modal-->
 
 
   <script src="dist/js/scripts.js">

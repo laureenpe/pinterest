@@ -1,29 +1,21 @@
-@mixin photos1(){
+@mixin photos(){
     width:220px;
     height:300px;
 }
-
-@mixin photos2(){
-    width:220px;
-    height:200px;
-}
-@mixin photos3(){
-    width:220px;
-    height:400px;
-}
-@mixin photos4(){
-    width:220px;
-    height:520px;
-}
-@mixin photos5(){
-    width:220px;
-    height:420px;
-}
-@mixin photos6(){
-    width:220px;
-    height:210px;
-}
-@mixin photos7(){
-    width:220px;
-    height:350px;
+@mixin photosSlider(){
+    display: inline-block;
+    height: 56px;
+    min-width: 84px;
+    white-space: nowrap;
+    background-color: rgb(191, 183, 183);
+    background-image: url(https://s-media-cache-ak0.pinimg.com/111x55_sf-76/20/d8/2f/20d82f9cbda7f0fb8ae70aee6e0afa92.jpg);
+    border-radius: 14px;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    h6{
+        margin-top: 20px;
+        font-size: 15px;
+    }
+   
 }
