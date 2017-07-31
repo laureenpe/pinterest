@@ -8750,7 +8750,8 @@ nav [class*=mdi-], nav [class^=mdi-], nav i, nav i.material-icons {
 #columns {
   column-count: 3;
   column-gap: 15px;
-  column-fill: auto; }
+  column-fill: auto;
+  margin-top: 26px; }
 
 .pin {
   display: inline-block;
