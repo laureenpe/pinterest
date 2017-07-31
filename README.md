@@ -1,8 +1,6 @@
 # Pinterest
 Final Project using Galp
 
-# PhotoLab
-
 ![alt text](docs/view_desktop.jpg "Pinterest")
 
 ### Contents
